@@ -50,34 +50,33 @@ tbody td, tbody tr
     min-width:110px;
     height: 100px;
     min-height:100px;
-    border: solid 1px darkcyan;
+    border: solid 1.5px black;
     font-family: Arial, sans-serif;
 }
 .simple_cell
 {
     font-size:24px;
-    box-shadow:inset gray 0 0 10px 2px;
+    box-shadow:inset gray 0 0 7px 2px;
 }
-.cell-red 
-{
-    /*background-color:red;*/
-    box-shadow:inset red 0 0 10px 2px; 
+.cell-red {
+    /*background-color:brown;*/
+    box-shadow: inset red 0 0 5px 2px;
 }
 .cell-yellow {
-    /*background-color: yellow;*/
-    box-shadow: inset yellow 0 0 10px 2px;
+    /*background-color: darkgoldenrod;*/
+    box-shadow: inset yellow 0 0 5px 2px;
 }
 .cell-blue {
-    /*background-color: blue;*/
-    box-shadow: inset blue 0 0 10px 2px;
+    /*background-color: cornflowerblue;*/
+    box-shadow: inset cornflowerblue 0 0 5px 2px;
 }
 .cell-green {
     /*background-color: greenyellow;*/
-    box-shadow: inset greenyellow 0 0 10px 2px;
+    box-shadow: inset cyan 0 0 5px 2px;
 }
 .cell-mid-green {
     /*background-color: mediumspringgreen;*/
-    box-shadow: inset mediumspringgreen 0 0 10px 2px;
+    box-shadow: inset mediumspringgreen 0 0 5px 2px;
 }
 .number
 {
