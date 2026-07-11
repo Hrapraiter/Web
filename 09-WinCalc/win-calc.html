@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Калькулятор Windows 11</title>
+    <link rel="stylesheet" href="win-calc.css" />
+</head>
+<body>
+    <div class="window">
+        <div class="title-bar">
+            <div class="title-bar-img-and-signature">
+                <img class="title-bar-icon" src="img/title-bar/icon.png" /><span class="title-text" id="text-title-bar-signature">Калькулятор</span>
+            </div>
+            <div class="title-bar-buttons">
+                <button class="button-base">&#8211;</button>
+                <button class="button-base"><div id="btn-maximaze-design"></div></button>
+                <button class="button-base" id="btn-close">&#10006;</button>
+            </div>
+        </div>
+        <!-- --------------------------------- -->
+        <div class="main-window">
+            <div class="edit-title-bar">
+                <div class="edit-title-bar-body-left-part">
+                    <button class="button-base">&#8801;</button>
+                    <span class="title-text" id="text-main-title-bar-signature">Обычный</span>
+                    <buton class="button-base" id="btn-scale-window"><img class="rect-img" src="img/main-window/scale.png"/></buton>
+                </div>
+                <div class="edit-title-bar-body-right-part">
+                    <button class="button-base" id="btn-history"><img class="rect-img" src="img/main-window/history.png"/></button>
+                </div>
+            </div>
+            <div class="edit-line-box">
+                <span class="edit-line">0</span>
+                <div class="control-box">
+                    <button class="button-base disable">MC</button>
+                    <button class="button-base disable">MR</button>
+                    <button class="button-base enable">M+</button>
+                    <button class="button-base enable">M-</button>
+                    <button class="button-base enable">MS</button>
+                    <button class="button-base disable">M&#709;</button>
+                </div>
+            </div>
+            <div class="divide"></div>
+            <div class="user-control-box">
+
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

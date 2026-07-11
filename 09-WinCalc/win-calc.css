@@ -1,0 +1,298 @@
+﻿body
+{
+    background-image:url(img/body-background.jpg);
+    background-size:cover;
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+}
+:root /* flags */ 
+{
+    --is-marker: 1;
+}
+:root /*win*/ 
+{
+    --win-width: 300px;
+    --win-height: 400px;
+    --win-border-radius: 5px;
+    --win-border-size: 2px;
+    --win-base-border-size:0.8px;
+}
+:root /* colors*/ {
+    /* | single-colors | */
+    --background-color: rgb(32, 32, 32);
+    --btn-close-color-hover: rgb(196, 43, 28);
+    /* | multi-colors | */
+    --middle-gray: rgb(50, 50, 50);
+    --light-gray: rgb(59, 59, 59);
+    --disable-element-color: rgb(102, 102, 102);
+    /* | debug | */
+    --marker-color: #ff01ff;
+}
+:root /* title-bar*/
+{
+    --title-bar-height: calc(var(--win-height) / 16.666);
+}
+:root /* main-window */ 
+{
+    --main-window-width: var(--win-width);
+    --main-window-height: calc(var(--win-height) - var(--title-bar-height));
+}
+:root /* title-bar-icon*/ 
+{
+    --title-bar-icon-width: 12px; /* важно k_h = 1.3125 , k_w = 0.7619 */
+    --title-bar-icon-height: calc(var(--title-bar-icon-width)*1.3125);
+}
+:root /* title-bar-signature*/
+{
+    --title-bar-font-size: calc(var(--title-bar-height)/2);
+}
+:root /* title-bar-buttons using for button-base*/ 
+{
+    --title-bar-button-width: calc(var(--title-bar-height)*0.75);
+    --title-bar-button-height: calc(var(--title-bar-height)*0.75);
+}
+:root /* edit-title-bar*/
+{
+    --edit-title-bar-width:var(--main-window-width);
+    --edit-title-bar-height:calc(var(--main-window-height)/14);
+}
+:root /* edit-control-box*/
+{
+    --control-box-width:var(--main-window-width);
+    --control-box-height:calc(var(--edit-title-bar-height)*1.2);
+}
+:root /* edit-line-box*/ 
+{
+    --edit-line-box-width:var(--main-window-width);
+    --edit-line-box-height:calc(var(--main-window-height)/4 + var(--control-box-height));
+}
+:root /* user-control-box*/
+{
+    --user-control-box-height: calc(
+        var(--main-window-height) -
+        var(--edit-title-bar-height) -
+        var(--edit-line-box-height) -
+        var(--win-base-border-size) -
+        4px 
+    );
+}
+.window {
+    width: var(--win-width);
+    height: var(--win-height);
+    position: center;
+    background-color: var(--background-color);
+    border:var(--win-base-border-size);
+    border-radius:var(--win-border-radius);
+}
+    .window > div {
+        border-radius: var(--win-border-radius);
+    }
+    .window > .title-bar, .window > .main-window {
+        border: solid var(--win-base-border-size) gray;
+    }
+    /* 
+        initial - не наследовать значене;
+        inherit - унаследовать даже если не наследуется по умочанию;
+
+    */
+    .window > .title-bar {
+        border-bottom: none;
+        border-end-start-radius: initial;
+        border-end-end-radius: initial;
+    }
+    .window > .main-window
+    {
+        border-top:none;
+        border-top-left-radius:initial;
+        border-top-right-radius:initial;
+    }
+.title-bar
+{
+    width:var(--win-width);
+    height:var(--title-bar-height);
+    color:white;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+    .title-bar-img-and-signature
+    {
+        padding:0px 5px;
+        display:flex;
+        align-items:center;
+    }
+        .title-bar-icon
+        {
+            width:var(--title-bar-icon-width);
+            height:var(--title-bar-icon-height);
+            border-radius:calc(var(--title-bar-icon-width)/7);
+        }
+        .title-text
+        {
+            color:white;
+            margin-left: calc(var(--title-bar-button-height)/2);
+        }
+        #text-title-bar-signature 
+        {
+            font-size: var(--title-bar-font-size);
+        }
+
+    .title-bar-buttons 
+    {
+        display:flex;
+        align-items:center;
+    }
+        .button-base 
+        {
+            width: var(--title-bar-height);
+            height: var(--title-bar-height);
+            background-color:var(--background-color);
+
+            padding:0px;
+            border:none;
+
+            color:white;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+            .button-base:hover 
+            {
+                background-color: var(--middle-gray);
+            }
+            #btn-close:hover
+            {
+                background-color: var(--btn-close-color-hover);
+            }
+        #btn-maximaze-design
+        {
+            border: solid 1px white;
+            width: calc(var(--title-bar-button-width) /2);
+            height: calc(var(--title-bar-button-height) /2);
+            border-radius: calc(min(var(--title-bar-button-width), var(--title-bar-button-height)) / 6); /*
+                int b-radius = (width < height ? width : height) / 6; или
+                b-radius = min(width , height) / 6;
+            */
+        }
+        #btn-close 
+        {
+            border-top-right-radius: var(--win-border-radius);
+        }
+.main-window
+{
+    width:var(--main-window-width);
+    height:var(--main-window-height);
+}
+.main-window .button-base
+{
+    border-radius:calc(var(--win-border-radius)*0.7);
+}
+    .edit-title-bar,
+    .edit-title-bar-body-left-part,
+    .edit-title-bar-body-right-part {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: calc(var(--edit-title-bar-width));
+        height: var(--edit-title-bar-height);
+        border: solid calc(var(--win-base-border-size) * var(--is-marker)) var(--marker-color);
+    }    
+        .edit-title-bar-body-left-part .button-base , 
+        .edit-title-bar-body-right-part .button-base
+        {
+            width: calc(var(--edit-title-bar-height)*0.75);
+            height: calc(var(--edit-title-bar-height)*0.75);
+        }
+        .edit-title-bar-body-left-part
+        {
+            justify-content: start;
+        }
+            #text-main-title-bar-signature
+            {
+                font-size:calc(var(--edit-title-bar-height)*0.6);
+            }
+            #btn-scale-window 
+            {
+                margin-left:5px;
+            }
+                #btn-scale-window > .rect-img 
+                {
+                    --size: calc(var(--edit-title-bar-height)*0.45);
+                }
+        .edit-title-bar-body-right-part
+        {
+            width: calc(var(--edit-title-bar-width)*0.3);
+            justify-content:end;
+        }
+        #btn-history {
+            margin-right: 5px;
+        }
+            #btn-history > .rect-img
+            {
+                --size: calc(var(--edit-title-bar-height)*0.45);
+            }
+    .edit-line-box {
+        width: var(--main-window-width);
+        height: var(--edit-line-box-height);
+        --base-font-size: calc(var(--main-window-height)/8);
+        border:solid calc(var(--win-base-border-size) * var(--is-marker)) var(--marker-color);
+    
+        display:flex;
+        flex-direction:column;
+        align-items:flex-end;
+    }
+        .edit-line
+        {
+            font-size:var(--base-font-size);
+            margin:auto 5px auto 0px;
+            color:white;
+        }
+
+    .control-box {
+        width: var(--main-window-width);
+        height:var(--control-box-height);
+        border: solid calc(var(--win-base-border-size) * var(--is-marker)) var(--marker-color);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+        .control-box > .button-base
+        {
+            width:calc(var(--main-window-width)/6);
+            height:calc(var(--control-box-height)*0.65)
+        }
+        .control-box > .disable
+        {
+            color:var(--disable-element-color);
+        }
+            .disable:hover
+            {
+                background-color:transparent;
+            }
+        .control-box > .enable
+        {
+            color:white;
+        }
+
+    .user-control-box
+    {
+        width:var(--main-window-width);
+        height:var(--user-control-box-height);
+        border:solid calc(var(--win-base-border-size) * var(--is-marker)) var(--marker-color);
+    }
+
+
+.rect-img {
+    --size: 22px;
+    width: var(--size);
+    height: var(--size);
+}
+.divide
+{
+    --size:var(--win-base-border-size);
+    border-bottom:solid var(--size) gray;
+    width:var(--win-width);
+    height:var(--size);
+}
