@@ -51,6 +51,7 @@
     {
         display:flex;
         align-items:center;
+        text-shadow:1px 1px 2px darkblue;
     }
     .title-bar-icon-and-signature,
     .title-bar-window-control-buttons
@@ -75,12 +76,38 @@
             inset 3px 1px 7px 0px #2288FF,
             inset -2px -1px 5px 0px #0000BB;
     }
+        .control-button:hover 
+        {
+            background-image: linear-gradient( 
+                to bottom right, 
+                rgb(189,149,249),
+                rgb(39,149,249),
+                rgb(149,149,249)
+            );
+        }
+        .control-button[disabled],
+        .control-button[disabled]:hover,
+        .control-button[disabled]:active {
+            color: #BBBBBB;
+            border-color: #BBBBBB;
+            background-color: rgb(39,104,249);
+            background-image: none;
+            box-shadow: inset 3px 1px 7px 0px #2288FF,
+                inset -2px -1px 5px 0px #0000BB;
+        }
+        .control-button:active 
+        {
+            background-image:none;
+            background-color:rgb(50,50,200);
+            box-shadow: 
+                inset 3px 1px 7px 0px #0000BB,
+                inset -2px -1px 5px 0px #2288FF;
+        }
     .control-button-signature 
     {
         margin-left: -2px;
         margin-top: -5px;
         text-align:center;
-        
     }
     .close-button-signature 
     {
@@ -93,7 +120,23 @@
             inset 2px 1px 7px 0px #FF8888,
             inset -2px -1px 5px 0px #770000;
     }
-    
+    .close-button:hover
+    {
+        background-image:linear-gradient(
+            to bottom right,
+            rgb(220, 177, 157),
+            rgb(255, 77, 57),
+            rgb(220, 177, 157)
+        );
+    }
+    .close-button:active
+    {
+        background-color:rgb(200, 77, 57);
+        background-image:none;
+        box-shadow:
+            inset 2px 1px 7px 0px #770000,
+            inset -2px -1px 5px 0px #FF8888;
+    }
 .client-rect
 {
     width:100%;
