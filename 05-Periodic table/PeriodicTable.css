@@ -52,31 +52,54 @@ tbody td, tbody tr
     min-height:100px;
     border: solid 1.5px black;
     font-family: Arial, sans-serif;
+    --box-shadow-color:rgb(0,0,0);
 }
-.simple_cell
-{
-    font-size:24px;
-    box-shadow:inset gray 0 0 7px 2px;
+.simple-cell {
+    font-size: 24px;
+    --box-shadow-color: gray;
+    box-shadow: inset var(--box-shadow-color) 0 0 7px 2px;
+}
+tbody:has(.simple-cell:hover) .simple-cell:not(:hover),
+tbody:has(.cell-red:hover) .cell-red:not(:hover),
+tbody:has(.cell-yellow:hover) .cell-yellow:not(:hover),
+tbody:has(.cell-blue:hover) .cell-blue:not(:hover),
+tbody:has(.cell-green:hover) .cell-green:not(:hover),
+tbody:has(.cell-mid-green:hover) .cell-mid-green:not(:hover) {
+    box-shadow: inset var(--box-shadow-color) 0px 0px 5px 6px;
+}
+
+.simple-cell:hover,
+.cell-red:hover,
+.cell-yellow:hover,
+.cell-blue:hover,
+.cell-green:hover,
+.cell-mid-green:hover {
+    box-shadow: inset var(--box-shadow-color) 0px 0px 25px 1px;
 }
 .cell-red {
     /*background-color:brown;*/
-    box-shadow: inset red 0 0 5px 2px;
+    --box-shadow-color: red;
+    box-shadow: inset var(--box-shadow-color) 0 0 5px 2px;
 }
 .cell-yellow {
     /*background-color: darkgoldenrod;*/
-    box-shadow: inset yellow 0 0 5px 2px;
+    --box-shadow-color: yellow;
+    box-shadow: inset var(--box-shadow-color) 0 0 5px 2px;
 }
 .cell-blue {
     /*background-color: cornflowerblue;*/
-    box-shadow: inset cornflowerblue 0 0 5px 2px;
+    --box-shadow-color: cornflowerblue;
+    box-shadow: inset var(--box-shadow-color) 0 0 5px 2px;
 }
 .cell-green {
     /*background-color: greenyellow;*/
-    box-shadow: inset cyan 0 0 5px 2px;
+    --box-shadow-color: cyan;
+    box-shadow: inset var(--box-shadow-color) 0 0 5px 2px;
 }
 .cell-mid-green {
     /*background-color: mediumspringgreen;*/
-    box-shadow: inset mediumspringgreen 0 0 5px 2px;
+    --box-shadow-color: mediumspringgreen;
+    box-shadow: inset var(--box-shadow-color) 0 0 5px 2px;
 }
 .number
 {
