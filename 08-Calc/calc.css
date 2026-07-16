@@ -224,14 +224,19 @@
     height:var(--size);
     border:solid 1px;
 }
+.calc-buttons button
+{
+    width: 42px;
+    height:30px;
+}
 .clear-buttons
 {
     grid-row:1;
     grid-column-start:2;
     grid-column-end:7;
 }
-.calc-buttons button
+.clear-buttons > button
 {
-    width: 42px;
-    height:30px;
+    width:79px;
+    margin-right:1px;
 }
