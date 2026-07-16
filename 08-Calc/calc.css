@@ -5,6 +5,11 @@
     background-size:cover;
     background-attachment:fixed;
     font-family:Tahoma;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:48px;
 }
 .main-window
 {
@@ -194,10 +199,11 @@
     {
         background-color:white;
     }
+/* //////////////////////////////////////////////////////////////// */
 #display
 {
     width:95%;
-    border:solid 1px gray;
+    border:solid 1.5px gray;
     border-radius:0px;
     text-align:right;
 }
@@ -249,7 +255,7 @@
 .calc-buttons button
 {
     color:blue;
-    border:solid 1px darkblue;
+    border:solid 1.5px darkblue;
     border-radius:5px;
 
     box-shadow:inset 0px -2px 3px 0px lightgray;
