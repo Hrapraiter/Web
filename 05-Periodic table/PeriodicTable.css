@@ -59,14 +59,18 @@ tbody td, tbody tr
     --box-shadow-color: gray;
     box-shadow: inset var(--box-shadow-color) 0 0 7px 2px;
 }
-tbody:has(.simple-cell:hover) .simple-cell:not(:hover),
-tbody:has(.cell-red:hover) .cell-red:not(:hover),
-tbody:has(.cell-yellow:hover) .cell-yellow:not(:hover),
-tbody:has(.cell-blue:hover) .cell-blue:not(:hover),
-tbody:has(.cell-green:hover) .cell-green:not(:hover),
-tbody:has(.cell-mid-green:hover) .cell-mid-green:not(:hover) {
+body:has(.GROUP_BY_COLOR) tbody:has(.simple-cell:hover) .simple-cell:not(:hover),
+body:has(.GROUP_BY_COLOR) tbody:has(.cell-red:hover) .cell-red:not(:hover),
+body:has(.GROUP_BY_COLOR) tbody:has(.cell-yellow:hover) .cell-yellow:not(:hover),
+body:has(.GROUP_BY_COLOR) tbody:has(.cell-blue:hover) .cell-blue:not(:hover),
+body:has(.GROUP_BY_COLOR) tbody:has(.cell-green:hover) .cell-green:not(:hover),
+body:has(.GROUP_BY_COLOR) tbody:has(.cell-mid-green:hover) .cell-mid-green:not(:hover),
+
+body:has(.GROUP_BY_PAGE) tr:has(.simple-cell:hover) .simple-cell:not(:hover),
+body:has(.GROUP_BY_PAGE) tr:has(.cell:hover) .cell:not(:hover){
     box-shadow: inset var(--box-shadow-color) 0px 0px 5px 6px;
 }
+
 
 .simple-cell:hover,
 .cell-red:hover,
