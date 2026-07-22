@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Pow</title>
+</head>
+<body>
+    <div>
+        <label for="number-input">Введите число:</label>
+        <input id="number-input" type="number"/><br>
+        <label for="number-page-input">Введите спепень числа:</label>
+        <input id="number-page-input" type="number"/>
+        <div id="result-box"></div>
+        <button onclick="pow()">Вычислить</button>
+    </div>
+    <script>
+        function pow()
+        {
+            let number_input = document.getElementById("number-input");
+            let number_page_input = document.getElementById("number-page-input");
+
+            const START_NUMBER = BigInt(number_input.value);
+            const PAGE = number_page_input.value;
+            let out = 1n;
+            document.getElementById("result-box").innerHTML = '';
+            for (let i = 0n; i < PAGE; i++)
+            {
+                out *= START_NUMBER;
+                document.getElementById("result-box").innerHTML += `${START_NUMBER}<sup>${i+1n}</sup> = ${out}<br>`;
+            }
+            document.getElementById("result-box").innerHTML += `<strong>result => ${out} ;</strong> <br>`;
+        }
+    </script>
+</body>
+</html>

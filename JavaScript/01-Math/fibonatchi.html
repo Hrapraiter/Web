@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Fibonatchi</title>
+</head>
+<body>
+    <label for="number-count">Максимальнок колличество цифр:</label>
+    <input id="number-count" type="number"/><br />
+    <label for="max-number">Максимальное значение.</label>
+    <input id="max-number" /><br />
+    <div id="result-box"></div>
+    <button onclick="Fibonatchi()">Вычислить</button>
+    <script>
+        function Fibonatchi()
+        {
+            let number_count = document.getElementById("number-count");
+            let max_number = document.getElementById("max-number");
+
+            let count = number_count.value;
+            let max = max_number.value;
+
+            /*
+
+            //не работает условия никогда не срабатывают
+                if(count === null)
+                {
+                    count = 0;
+                    alert("count empty");
+                }
+                if(max === null)
+                {
+                    max = 0;
+                    alert("max empty");
+                }
+
+            //работает 
+                if(count == 0)alert("count empty!");
+                if(max == 0)alert("max empty!");
+
+                значит значение из елементов <input> по дефолту дают 0
+            */
+            
+            let out = 0n;
+            let out_last_0 = 0n;
+            let out_last_1 = 1n;
+
+            document.getElementById("result-box").innerHTML = '';
+            for (let i = 0; i < count && (max == 0 || out_last_0 + out_last_1 <= max); i++)
+            {
+                out = out_last_0 + out_last_1;
+                out_last_0 = out_last_1;
+                out_last_1 = out;
+                document.getElementById("result-box").innerHTML += `${out_last_0} + ${out_last_1} = ${ out }; <br>`;
+            }
+        }
+    </script>
+</body>
+</html>
