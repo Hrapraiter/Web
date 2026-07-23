@@ -4,63 +4,14 @@
 <head>
     <meta charset="utf-8" />
     <title>JavaScript</title>
+    
 </head>
-<body style="font-size:28px;">
+<body style="font-size:24px;">
     <h1>JavaScript</h1>
     
-    <div>
-        <label for="factorial-number">Введите число для вычисления факториала:</label>
-        <input id="factorial-number" type="number" />
-        <div id="factorial-result"></div>
-        <button onclick="Factorial()">Вычислить</button>
-    </div>
-
-    <script>
-        function Factorial()
-        {
-            let factorial_number = document.getElementById("factorial-number");// получаем элемент страницы в который пользователь вводит значение. 
-            let n = factorial_number.value;
-            let f = BigInt(1);
-            document.getElementById("factorial-result").innerHTML = "";
-            for (let i = 1n; i <= n; i++)
-            {
-                f *= i;
-                document.getElementById("factorial-result").innerHTML += `${i}! = ${f}; <br>`;
-            }
-            document.getElementById("factorial-result").innerHTML += `<h3>${n}! = ${f}</h3>`;
-        }
-        //alert("Привет!\n это модальное окно браузера");
-        // var name = prompt("Введите Ваше имя");
-        // //alert("Привет " + name); // конкатинация
-        // let str = `Привет ${name}!`;
-        // alert(str); // интерполяция
-        // console.log(str);
-        // document.write(`<h3>${str}</h3>`);
-
-        // {
-        //     const PI = 3.14157;
-        //     a = 2;
-        // }
-        // document.write(a + '<br>');
-        // document.write(PI + '<br>');
-
-        /*
-        
-        let n = prompt("Введите число для вычисления факториала:");
-        let f = BigInt(1);
-        // l-value = r-value;
-        // l-value - это переменная слева (переменная, в которую производится запись);
-        // r-value - это выражение справа (выражение, значение которого будет записано в лево);
-        for (let i = 1n; i <= n; i++)
-        {
-            f *= i;
-            document.write(`${i}! = ${f};<br>`);
-        }
-        document.write(`<h2>${n}! = ${f}</h2>`);
-        document.write(`<h2>${typeof (n)}</h2>`);
-        document.write(`<h2>${typeof (f)}</h2>`);
-        
-        */
-    </script>
+    <ul>
+        <li><a href="intro.html">Введение</a></li>
+        <li><a href="events.html">Формы и события</a></li>
+    </ul>
 </body>
 </html>

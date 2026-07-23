@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>JavaScript Intro</title>
+</head>
+<body>
+    <h1>JavaScript</h1>
+    <details>
+        <summary>Простейшие задачи</summary>
+        <div>
+            <label for="factorial-number">Введите число для вычисления факториала:</label>
+            <input id="factorial-number" type="number" />
+            <div id="factorial-result"></div>
+            <button onclick="Factorial()">Вычислить</button>
+        </div>
+        <div>
+            <label for="fibonacci-limit">Введите предел ряда Фибоначчи:</label>
+            <input id="fibonacci-limit" type="number" />
+            <div id="fibonacci-sequence"></div>
+            <button onclick="Fibonacсi()">Вычислить</button>
+        </div>
+    </details>
+    <script>
+    function Factorial()
+    {
+        let factorial_number = document.getElementById("factorial-number");// получаем элемент страницы в который пользователь вводит значение.
+        let n = factorial_number.value;
+        let f = BigInt(1);
+        document.getElementById("factorial-result").innerHTML = "";
+        for (let i = 1n; i <= n; i++)
+        {
+            f *= i;
+            document.getElementById("factorial-result").innerHTML += `${i}! = ${f}; <br>`;
+        }
+        document.getElementById("factorial-result").innerHTML += `<h3>${n}! = ${f}</h3>`;
+    }
+    function Fibonacсi()
+    {
+        let n = document.getElementById("fibonacci-limit").value;
+        for (let a = 0, b = 1, c = a + b; a <= n; c = (a = b) + (b = c))
+        {
+            document.getElementById("fibonacci-sequence").innerHTML += `${a}\t`;
+        }
+    }
+
+    //alert("Привет!\n это модальное окно браузера");
+    // var name = prompt("Введите Ваше имя");
+    // //alert("Привет " + name); // конкатинация
+    // let str = `Привет ${name}!`;
+    // alert(str); // интерполяция
+    // console.log(str);
+    // document.write(`<h3>${str}</h3>`);
+
+    // {
+    //     const PI = 3.14157;
+    //     a = 2;
+    // }
+    // document.write(a + '<br>');
+    // document.write(PI + '<br>');
+
+    /*
+
+    let n = prompt("Введите число для вычисления факториала:");
+    let f = BigInt(1);
+    // l-value = r-value;
+    // l-value - это переменная слева (переменная, в которую производится запись);
+    // r-value - это выражение справа (выражение, значение которого будет записано в лево);
+    for (let i = 1n; i <= n; i++)
+    {
+        f *= i;
+        document.write(`${i}! = ${f};<br>`);
+    }
+    document.write(`<h2>${n}! = ${f}</h2>`);
+    document.write(`<h2>${typeof (n)}</h2>`);
+    document.write(`<h2>${typeof (f)}</h2>`);
+
+    */
+    </script>
+</body>
+</html>
